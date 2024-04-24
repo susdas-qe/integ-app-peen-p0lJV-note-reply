@@ -1,0 +1,22 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: hacbs-test-project-v5kl
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: hacbs-test-project-v5kl
+    app.kubernetes.io/part-of: integ-app-peen
+  name: hacbs-test-project-v5klitv3
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: hacbs-test-project-v5kl
+    weight: 100
+status: {}
